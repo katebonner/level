@@ -151,7 +151,11 @@ a {
 }
 
 .padding-large {
-  width: 20%;
+  width: 15%;
+}
+
+.shrink {
+  width: 30%;
 }
 
 

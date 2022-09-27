@@ -108,6 +108,9 @@ function App() {
       sum += valence[i];
     }
     var avg = sum/valenceArray.length;
+    var percent = Math.trunc(avg*100);
+    const usAvgPercent = 46;
+    var difference = Math.abs(usAvgPercent - percent);
     const data = {
       labels: [
         'score',
@@ -115,7 +118,7 @@ function App() {
       ],
       datasets: [{
         label: 'valence',
-        data: [avg*100, 100 - avg*100],
+        data: [percent, 100 - percent],
         backgroundColor: [
           '#dd2302',
           'rgb(255, 255, 255, 0)',
@@ -124,10 +127,23 @@ function App() {
       }]
     };
     return (
+      <>
+      <div className='shrink floating2'>
+        {percent < usAvgPercent ?
+        <h3>your valence level is {difference}% lower than the national average</h3>
+        : <h3> </h3> }
+        {percent === usAvgPercent ?
+        <h3>your valence level is equal to the national average</h3>
+        : <h3> </h3> }
+        {percent > usAvgPercent ?
+        <h3>your valence level is {difference}% higher than the national average</h3>
+        : <h3> </h3> }
+      </div>
       <div className='padding-large floating'> 
         <Doughnut data={data} ></Doughnut>
-        <div className='center'>~ {avg}</div>
+        <div className='center'>{percent}%</div>
       </div>
+      </>
     );
   };
 
