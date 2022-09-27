@@ -1,3 +1,7 @@
+:root {
+  background-color: #e93d1e;
+}
+
 body {
   margin: 0;
   font-family: Circular, Helvetica, Arial, sans-serif;;
@@ -40,7 +44,6 @@ a {
 .margin-medium {
   margin: 20px;
 }
-
 
 
 .margin-large {
@@ -138,6 +141,17 @@ a {
 .profile-btn:hover {
   border: 1px #ffffff solid;
   background-color: #e93d1e;
+}
+
+.score-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.padding-large {
+  width: 20%;
 }
 
 

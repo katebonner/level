@@ -2,6 +2,10 @@ import './App.css';
 import SpotifyAuth from './spotify/auth';
 import {useEffect, useState} from 'react';
 import Axios from 'axios';
+import { Doughnut } from 'react-chartjs-2';
+import {Chart , ArcElement} from 'chart.js';
+
+Chart.register(ArcElement);
 
 
 function App() {
@@ -104,13 +108,28 @@ function App() {
       sum += valence[i];
     }
     var avg = sum/valenceArray.length;
+    const data = {
+      labels: [
+        'score',
+        'transparent'
+      ],
+      datasets: [{
+        label: 'valence',
+        data: [avg*100, 100 - avg*100],
+        backgroundColor: [
+          '#dd2302',
+          'rgb(255, 255, 255, 0)',
+        ],
+        hoverOffset: 4
+      }]
+    };
     return (
-      <div> 
-        <h2>avg valence score:{avg}</h2>
+      <div className='padding-large floating'> 
+        <Doughnut data={data} ></Doughnut>
+        <div className='center'>~ {avg}</div>
       </div>
     );
   };
-
 
 
   return (
@@ -136,13 +155,13 @@ function App() {
               <img className='wave-large floating3' src={require('./assets/wave.png')} alt='sin wave'/>
               <div className='intro-container'>
               <div className='intro-elements'>
-              <h5 className='intro-text'>This measurement, called valence, is assigned to every track in spotify's collection and lives on a range from 0.0 to 1.0.</h5>
+              <h5 className='intro-text'>This measurement, called valence, is assigned to every track in spotify's collection and lives on a scale from 0.0 to 1.0.</h5>
               <h5 className='intro-text'>
               "Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry)."
               </h5>
               </div>
               <div className='center'>
-              <button className='profile-btn' onClick={queryMe}>my valence levelsç</button>
+              <button className='profile-btn' onClick={queryMe}>my valence levels</button>
               </div>
               </div>
               </>
@@ -155,15 +174,17 @@ function App() {
                   </>
                   :  
                   <>
-                  <div className='song-list'>
+                  {/* <div className='song-list'>
                     {renderTop()}
-                  </div>
+                  </div> */}
                   {valence.length === 0 ?
                   <>
                   <button className='connect' onClick={queryTrackValence}>query happiness</button>
                   </> :
                   <>
+                  <div className='score-container'>
                   {renderValenceScore()}
+                  </div>
                   </>
                   }
                   </>}
