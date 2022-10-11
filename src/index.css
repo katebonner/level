@@ -15,6 +15,12 @@ h1 {
   margin-bottom: 0;
 }
 
+.no-padding {
+  position: relative;
+  padding-top: 0;
+  top: -50px;
+}
+
 .logo {
   font-size: 8em;
   padding-left: 10%;
@@ -45,7 +51,6 @@ a {
   margin: 20px;
 }
 
-
 .margin-large {
   margin: 30px 100px;
   text-align: left;
@@ -54,6 +59,10 @@ a {
 .margin-largest {
   margin: 30px 200px;
   text-align: left;
+}
+
+.third-width {
+  width: 30%;
 }
 
 
@@ -81,10 +90,19 @@ a {
   border-radius: 30px;
 }
 
+.container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 10%;
+}
+
 .me-container{
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .song-list {
@@ -121,24 +139,48 @@ a {
   width: 50%;
 }
 
+
 .intro-text {
   margin: 20px 100px;
 }
 
+
+
 .profile-btn {
   background-color: #f7583b;
   text-decoration: none;
-  width: 250px;
-  height: 250px;
+  width: 400px;
+  height: 400px;
+  padding: 0;
+  border-radius: 400px;
+  border: 1px transparent solid;
+  color: #ffff;
+  font-size: 1em;
+  margin: 50px;
+  position: relative;
+  top: -130px;
+}
+
+.valence-btn {
+  background-color: #f7583b;
+  text-decoration: none;
+  width: 200px;
+  height: 200px;
   padding: 0;
   border-radius: 200px;
   border: 1px transparent solid;
   color: #ffff;
-  font-size: 1em;
-  margin: 0 0 100px 50px;
+  font-size: .8em;
+  margin: 50px;
+  position: relative;
 }
 
 .profile-btn:hover {
+  border: 1px #ffffff solid;
+  background-color: #e93d1e;
+}
+
+.valence-btn:hover {
   border: 1px #ffffff solid;
   background-color: #e93d1e;
 }
@@ -154,8 +196,11 @@ a {
   width: 15%;
 }
 
+
 .shrink {
   width: 30%;
+  align-items: justify;
+  margin: 10%;
 }
 
 
@@ -198,4 +243,57 @@ a {
   100%   { transform: translate(0, -0px); }   
 }
 
+.orbit {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  position: relative;
+  top: -250px;
+
+  -webkit-animation: myOrbit 15s linear infinite; /* Chrome, Safari 5 */
+     -moz-animation: myOrbit 15s linear infinite; /* Firefox 5-15 */
+       -o-animation: myOrbit 15s linear infinite; /* Opera 12+ */
+          animation: myOrbit 15s linear infinite; /* Chrome, Firefox 16+, 
+                                                    IE 10+, Safari 5 */
+}
+
+@-webkit-keyframes myOrbit {
+  from { -webkit-transform: rotate(0deg) translateX(200px) rotate(0deg); }
+  to   { -webkit-transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+}
+
+@-moz-keyframes myOrbit {
+  from { -moz-transform: rotate(0deg) translateX(200px) rotate(0deg); }
+  to   { -moz-transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+}
+
+@-o-keyframes myOrbit {
+  from { -o-transform: rotate(0deg) translateX(200px) rotate(0deg); }
+  to   { -o-transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+}
+
+@keyframes myOrbit {
+  from { transform: rotate(0deg) translateX(200px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+}
+
+@media screen and (max-width: 1000px) {
+  .intro-elements {
+    width: 100%;
+  }
+  .intro-text {
+    margin: 20px 75px;
+  }
+  .profile-btn {
+    top: 0;
+    margin: 75px;
+  }
+  .valence-btn {
+    top: 0;
+  }
+
+  .orbit {
+    top: -200px;
+  }
+}
 
