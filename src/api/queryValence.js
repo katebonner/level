@@ -9,7 +9,19 @@ const queryValence = async () => {
     headers: {Authorization: `Bearer ${token}`},
     params: {ids: trackIds}
   });
-  return data;
+  let valenceArray = [];
+  data?.audio_features.map((track) => {
+    valenceArray.push(track.valence);
+  })
+
+  var sum = 0;
+  for (let i = 0 ; i < valenceArray.length; i++){
+    sum += valenceArray[i];
+  }
+  var avg = sum/(valenceArray.length);
+  var percent = Math.trunc(avg*100);
+
+  return percent;
 }
 
 Axios.interceptors.request.use(async req => {

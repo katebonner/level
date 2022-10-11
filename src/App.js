@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Landing from './pages/landing';
 import Intro from './pages/intro';
 import Valence from './pages/valence';
+import Score from './pages/score';
 import NoMatch from './pages/noMatch';
 
 
@@ -39,7 +40,8 @@ function App() {
             <Router>
               <Routes>
                 <Route exact path='/' element={<Intro></Intro>}></Route>
-                <Route exact path='/valence' element={<Valence></Valence>}></Route>
+                <Route path='/valence' element={<Valence></Valence>}></Route>
+                <Route path='/score' element={<Score></Score>}></Route>
                 <Route element={<NoMatch></NoMatch>}></Route>
               </Routes>
           </Router>
