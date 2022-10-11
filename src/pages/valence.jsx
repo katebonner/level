@@ -8,7 +8,7 @@ const Valence = () => {
     return(
         <>
             <User></User>
-            <Top className='hide'></Top>
+            <Top></Top>
         </>
     )
 }
