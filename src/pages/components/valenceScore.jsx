@@ -22,8 +22,8 @@ const ValenceScore = () => {
             label: 'valence',
             data: [data, 100 - data],
             backgroundColor: [
-                '#dd2302',
-                'rgb(255, 255, 255, 0)',
+              '#dd2302',
+              'rgb(255, 255, 255, 0)',
             ],
             hoverOffset: 3,
         }]
@@ -35,17 +35,17 @@ const ValenceScore = () => {
         <div className='container'>
           <div className='third-width floating'> 
             <Doughnut data={valenceData} ></Doughnut>
-            <div className='center'>{data}%</div>
-            </div> 
-          <div className='shrink floating2'>
+          </div> 
+          <div className='center floating2'>
+          <div className='center percentage'>{data}%</div>
             {data < natAvg ?
-            <h3>your valence level is {difference}% lower than the national average</h3>
+            <h3>your valence level is {difference}% lower than the national average :(</h3>
             : <h3> </h3> }
             {data === natAvg ?
-            <h3>your valence level is equal to the national average</h3>
+            <h3>your valence level is equal to the national average :0</h3>
             : <h3> </h3> }
             {data > natAvg ?
-            <h3>your valence level is {difference}% higher than the national average</h3>
+            <h3>your valence level is {difference}% higher than the national average :)</h3>
             : <h3> </h3> }
           </div>
           </div>
