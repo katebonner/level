@@ -11,7 +11,7 @@ const ValenceScore = () => {
     const natAvg = 46;
     const { data, isLoading } = useQuery('valence', async () => await queryValence());
     var difference = Math.abs(natAvg - data);
-      
+    
    
     const valenceData = {
         labels: [

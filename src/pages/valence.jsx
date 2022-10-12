@@ -1,6 +1,7 @@
 import React from 'react';
 import User from './components/user';
 import Top from './components/top';
+import ValenceScore from './components/valenceScore';
 
 const Valence = () => {
 

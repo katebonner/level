@@ -42,7 +42,7 @@ function App() {
                 <Route exact path='/' element={<Intro></Intro>}></Route>
                 <Route path='/valence' element={<Valence></Valence>}></Route>
                 <Route path='/score' element={<Score></Score>}></Route>
-                <Route element={<NoMatch></NoMatch>}></Route>
+                <Route path='*' element={<NoMatch></NoMatch>}></Route>
               </Routes>
           </Router>
         </>

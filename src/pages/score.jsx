@@ -7,7 +7,6 @@ const Score = () => {
     return(
         <>
         <ValenceScore></ValenceScore>
-        <Top></Top>
         </>
     )
 }
