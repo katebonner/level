@@ -15,7 +15,7 @@ const Landing = () => {
             <div id="myModal" className="modal">
                  <div className="modal-content">
                     <span onClick={exitModal} className="close">&times;</span>
-                    <p className='modal-text'>Due to restrictions with the Spotify API, only a limmited list of specified users can access this applicaiton. To request access, please email me at <a className='modal-link' href='mailto:katebonner277@gmail.com'>katebonner277@gmail.com</a></p>
+                    <p className='modal-text'>Due to restrictions with the Spotify API, only a limited list of specified users can access this application. To request access, please email me at <a className='modal-link' href='mailto:katebonner277@gmail.com'>katebonner277@gmail.com</a></p>
                     </div>
             </div>
 
