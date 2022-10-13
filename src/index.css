@@ -59,6 +59,11 @@ a {
   text-align: center;
 }
 
+.circle{
+  border-radius: 50%;
+  background-color: #fefefe;
+}
+
 .justify-right {
   text-align: right;
 }
