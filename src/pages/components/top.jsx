@@ -7,11 +7,6 @@ const Top = () => {
   
   const { data, isLoading } = useQuery('top', async () => await queryTop());
 
-  let topTrackIds = data?.items.map((track) => {
-      return track.id
-  })
-  let topTrackIdString = topTrackIds?.join(',');
-  window.localStorage.setItem('top', topTrackIdString);
 
     return ( <></>
       // <> {isLoading ?  <h1>loading...</h1> :
