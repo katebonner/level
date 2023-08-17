@@ -1,14 +1,16 @@
+:root {
+  --primary-green: #1db954;
+  --black: #191414;
+  --white: #fff;
+}
 
 .App-header {
-  background-color: #e93d1e;
+  background-color: var(--primary-green);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: left;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #ffff;
+  color: var(--white);
 }
-
-
-
