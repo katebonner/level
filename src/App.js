@@ -51,7 +51,7 @@ function App() {
             </div>
             <Router>
               <Routes>
-                <Route exact path="/" element={<Intro></Intro>}></Route>
+                <Route path="/" element={<Intro></Intro>}></Route>
                 <Route path="/valence" element={<Valence></Valence>}></Route>
                 <Route path="/score" element={<Score></Score>}></Route>
                 <Route path="*" element={<NoMatch></NoMatch>}></Route>
