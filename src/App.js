@@ -1,6 +1,6 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom"; // Change 1: Imported HashRouter
 import Landing from "./Controllers/Landing/index";
 import Intro from "./Controllers/Introduction/";
 import Valence from "./Controllers/Valence";
