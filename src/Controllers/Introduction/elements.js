@@ -20,23 +20,11 @@ export const Title = styled.text({
 });
 
 export const Description = styled.div({
-  fontSize: "2vw",
-  width: "80%",
+  fontSize: "3vw",
+  width: "70%",
   fontWeight: 600,
   textAlign: "center",
   margin: "2vh 0",
-  zIndex: 1,
-  "@media (max-width: 900px)": {
-    fontSize: "4vw",
-    width: "80%",
-  },
-});
-
-export const Quote = styled.div({
-  fontSize: "2vw",
-  width: "80%",
-  margin: "2vh 0",
-  textAlign: "center",
   zIndex: 1,
   "@media (max-width: 900px)": {
     fontSize: "4vw",

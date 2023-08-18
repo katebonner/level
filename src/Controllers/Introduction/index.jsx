@@ -13,19 +13,15 @@ const Intro = () => {
   return (
     <Container>
       <Circle />
-      <Title className="floating">VALENCE</Title>
+      <Title className="floating">&#123;valence&#125;</Title>
       <Description>
-        Spotify's API has a happiness measurement called valence. It is assigned
-        to every track in their collection and lives on a scale from 0.0 to 1.0.
+        Spotify's API provides a 'valence' score, which measures a track's
+        happiness level. By accessing your profile and analyzing your recent
+        songs, we determine your average happiness score based on your most
+        recent music.
       </Description>
-      <Quote>
-        "Tracks with high valence sound more positive (e.g. happy, cheerful,
-        euphoric), while tracks with low valence sound more negative (e.g. sad,
-        depressed, angry)."
-      </Quote>
-
       <Link to="/valence">
-        <ValenceButton>LOAD PROFILE</ValenceButton>
+        <ValenceButton>ACCESS</ValenceButton>
       </Link>
     </Container>
   );

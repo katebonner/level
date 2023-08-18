@@ -9,12 +9,13 @@ import {
   AverageLine,
   Right,
   Results,
-  Valence,
   Emoji,
   Padding,
   Pink,
+  Container,
 } from "./elements";
 import Top from "../Top";
+import { Loader } from "../Loader";
 
 Chart.register(ArcElement);
 
@@ -56,18 +57,24 @@ const ValenceScore = () => {
         <Top />
       </StaticBackground>
       <RelativeForeground>
-        <AverageLine averageValue={natAvg * 8}>
-          <Pink>AVERAGE.</Pink>
-        </AverageLine>
-        {!isLoading && (
-          <Padding>
-            <Results averageValue={natAvg * 8}>{userCase.text}</Results>
-            <Right>
-              <DataPoint className="floating" value={data * 8}>
-                <Emoji>{userCase.emoji}</Emoji>
-              </DataPoint>
-            </Right>
-          </Padding>
+        {isLoading ? (
+          <Container>
+            <Loader />
+          </Container>
+        ) : (
+          <>
+            <AverageLine averageValue={natAvg * 8}>
+              <Pink>AVERAGE.</Pink>
+            </AverageLine>
+            <Padding>
+              <Results averageValue={natAvg * 8}>{userCase.text}</Results>
+              <Right>
+                <DataPoint className="floating" value={data * 8}>
+                  <Emoji>{userCase.emoji}</Emoji>
+                </DataPoint>
+              </Right>
+            </Padding>
+          </>
         )}
       </RelativeForeground>
     </>

@@ -1,5 +1,13 @@
 import styled from "@emotion/styled";
 
+export const Container = styled.div({
+  display: "flex",
+  justifyContent: "space-around",
+  flexDirection: "column",
+  flexWrap: "wrap",
+  alignItems: "center",
+});
+
 export const StaticBackground = styled.div({
   position: "fixed",
 });
