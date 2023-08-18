@@ -1,9 +1,19 @@
 import React from "react";
 import { useQuery } from "react-query";
 import queryValence from "../../api/queryValence";
-import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement } from "chart.js";
-import { StaticBackground, RelativeForeground } from "./elements";
+import {
+  StaticBackground,
+  RelativeForeground,
+  DataPoint,
+  AverageLine,
+  Right,
+  Results,
+  Valence,
+  Emoji,
+  Padding,
+  Pink,
+} from "./elements";
 import Top from "../Top";
 
 Chart.register(ArcElement);
@@ -15,57 +25,51 @@ const ValenceScore = () => {
     async () => await queryValence()
   );
   var difference = Math.abs(natAvg - data);
-
-  const valenceData = {
-    labels: ["score", "transparent"],
-    datasets: [
-      {
-        label: "valence",
-        data: [data, 100 - data],
-        backgroundColor: ["#fff", "rgb(255, 255, 255, 0)"],
-        hoverOffset: 3,
-      },
-    ],
+  const Case = {
+    BelowAvg: {
+      emoji: "🥲",
+      text: `YOUR VALENCE LEVEL IS ${difference}% LOWER THAN`,
+    },
+    Avg: {
+      emoji: "😊",
+      text: `YOUR VALENCE LEVEL IS`,
+    },
+    AboveAvg: {
+      emoji: "🤠",
+      text: `YOUR VALENCE LEVEL IS ${difference}% HIGHER THAN`,
+    },
   };
+
+  let userCase;
+
+  if (data < natAvg) {
+    userCase = Case.BelowAvg;
+  } else if (data === natAvg) {
+    userCase = Case.Avg;
+  } else {
+    userCase = Case.AboveAvg;
+  }
 
   return (
     <>
       <StaticBackground>
         <Top />
       </StaticBackground>
-      {!isLoading && (
-        <RelativeForeground>
-          <div className="container">
-            <div className="third-width">
-              <Doughnut data={valenceData}></Doughnut>
-            </div>
-            <div className="center ">
-              <div className="center percentage">{data}%</div>
-              {data < natAvg ? (
-                <h3>
-                  your valence level is {difference}% lower than the national
-                  average :(
-                </h3>
-              ) : (
-                <h3> </h3>
-              )}
-              {data === natAvg ? (
-                <h3>your valence level is equal to the national average :0</h3>
-              ) : (
-                <h3> </h3>
-              )}
-              {data > natAvg ? (
-                <h3>
-                  your valence level is {difference}% higher than the national
-                  average :)
-                </h3>
-              ) : (
-                <h3> </h3>
-              )}
-            </div>
-          </div>
-        </RelativeForeground>
-      )}
+      <RelativeForeground>
+        <AverageLine averageValue={natAvg * 8}>
+          <Pink>AVERAGE.</Pink>
+        </AverageLine>
+        {!isLoading && (
+          <Padding>
+            <Results averageValue={natAvg * 8}>{userCase.text}</Results>
+            <Right>
+              <DataPoint className="floating" value={data * 8}>
+                <Emoji>{userCase.emoji}</Emoji>
+              </DataPoint>
+            </Right>
+          </Padding>
+        )}
+      </RelativeForeground>
     </>
   );
 };

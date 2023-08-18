@@ -1,5 +1,5 @@
 import React from "react";
-import ValenceScore from "../Components/ValenceScore";
+import ValenceScore from "../../Components/ValenceScore";
 
 const Score = () => {
   return (

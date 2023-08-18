@@ -4,7 +4,7 @@ import { HashRouter as Router, Route, Routes } from "react-router-dom"; // Chang
 import Landing from "./Controllers/Landing/index";
 import Intro from "./Controllers/Introduction/";
 import Valence from "./Controllers/Valence";
-import Score from "./Controllers/score";
+import Score from "./Controllers/Score";
 import NoMatch from "./Controllers/404";
 
 function App() {
@@ -43,7 +43,7 @@ function App() {
             <div className="justify-right margin-medium">
               <button
                 className="connect bold"
-                style={{ position: "relative" }}
+                style={{ position: "fixed", right: "5%", top: "5%" }}
                 onClick={logout}
               >
                 DISCONNECT

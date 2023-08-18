@@ -14,7 +14,7 @@ export const Title = styled.text({
   fontWeight: 600,
   paddingBottom: 0,
   marginBottom: 0,
-  marginTop: "10vh",
+
   textAlign: "center",
   zIndex: 1,
 });
@@ -56,22 +56,20 @@ export const ValenceButton = styled.button({
   marginTop: "10%",
   fontWeight: 600,
   color: "#fff",
+  position: "relative",
   zIndex: 99999,
   "&:hover": {
     backgroundColor: "#de49a2",
     borderColor: "transparent",
   },
-  "@media (max-width: 900px)": {
-    fontSize: "4vw",
-  },
 });
 
 export const Circle = styled.div({
   position: "fixed",
-  bottom: "50vw",
+  bottom: "10vh",
   left: "-50vw",
-  width: "100vw",
-  height: "150vh",
+  width: "200vw",
+  height: "200vh",
   borderRadius: "50%",
   backgroundColor: "#006641",
 });

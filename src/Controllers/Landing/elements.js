@@ -14,10 +14,10 @@ export const SinWave = styled.img({
 
 export const Circle = styled.div({
   position: "fixed",
-  bottom: "-25vh",
-  right: "-50vw",
-  width: "100vw",
-  height: "150vh",
+  bottom: "-10vh",
+  right: "-70vh",
+  width: "120vh",
+  height: "120vh",
   borderRadius: "50%",
   backgroundColor: "#006641",
 });

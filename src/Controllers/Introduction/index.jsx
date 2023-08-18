@@ -13,7 +13,7 @@ const Intro = () => {
   return (
     <Container>
       <Circle />
-      <Title>VALENCE</Title>
+      <Title className="floating">VALENCE</Title>
       <Description>
         Spotify's API has a happiness measurement called valence. It is assigned
         to every track in their collection and lives on a scale from 0.0 to 1.0.

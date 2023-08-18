@@ -9,11 +9,11 @@ const User = () => {
 
   return (
     <Container>
-      {isLoading ? (
-        <Name key={data?.id}>LOADING PROFILE ...</Name>
-      ) : (
+      {!isLoading && (
         <Container key={data?.id}>
-          <Name key={data?.id}>{data?.display_name}</Name>
+          <Name className="floating" key={data?.id}>
+            {data?.display_name}
+          </Name>
           <Link to="/score">
             <CalculateButton>CALCULATE VALENCE</CalculateButton>
           </Link>
