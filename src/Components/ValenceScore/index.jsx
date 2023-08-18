@@ -29,15 +29,15 @@ const ValenceScore = () => {
   const Case = {
     BelowAvg: {
       emoji: "🥲",
-      text: `YOUR VALENCE LEVEL IS ${difference}% LOWER THAN`,
+      text: `YOUR VALENCE LEVEL IS ${data}% — WHICH IS ${difference}% LOWER THAN`,
     },
     Avg: {
       emoji: "😊",
-      text: `YOUR VALENCE LEVEL IS`,
+      text: `YOUR VALENCE LEVEL IS ${data}% — WHICH IS`,
     },
     AboveAvg: {
       emoji: "🤠",
-      text: `YOUR VALENCE LEVEL IS ${difference}% HIGHER THAN`,
+      text: `YOUR VALENCE LEVEL IS ${data}% — WHICH IS ${difference}% HIGHER THAN`,
     },
   };
 

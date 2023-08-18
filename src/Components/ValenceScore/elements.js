@@ -56,26 +56,38 @@ export const AverageLine = styled.div(({ averageValue }) => ({
 }));
 
 export const Results = styled.div(({ averageValue }) => ({
-  fontSize: "9vw",
+  fontSize: "7vw",
   fontWeight: 600,
   textAlign: "left",
   width: "80%",
   position: "absolute",
   top: `calc(100% - ${averageValue}px)`,
   transform: "translateY(-100%)",
+  "@media (max-width: 1400px)": {
+    fontSize: "8vW",
+  },
   "@media (max-width: 900px)": {
     fontSize: "8vh",
+  },
+  "@media (max-width: 700px)": {
+    fontSize: "7vh",
   },
 }));
 
 export const Pink = styled.text({
   color: "#de49a2",
-  fontSize: "9vw",
+  fontSize: "7vw",
   fontWeight: 600,
   textAlign: "left",
   width: "80%",
   padding: "0 36px",
+  "@media (max-width: 1400px)": {
+    fontSize: "8vW",
+  },
   "@media (max-width: 900px)": {
     fontSize: "8vh",
+  },
+  "@media (max-width: 700px)": {
+    fontSize: "7vh",
   },
 });
