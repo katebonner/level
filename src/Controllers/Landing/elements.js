@@ -7,11 +7,6 @@ export const Logo = styled.div({
   marginBottom: 0,
 });
 
-export const SinWave = styled.img({
-  width: "20vw",
-  paddingBottom: "5%",
-});
-
 export const Circle = styled.div({
   position: "fixed",
   bottom: "-10vh",

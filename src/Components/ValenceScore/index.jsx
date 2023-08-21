@@ -10,11 +10,54 @@ import {
   Filler,
 } from "chart.js";
 
-import { StaticBackground, RelativeForeground, Container } from "./elements";
+import {
+  StaticBackground,
+  RelativeForeground,
+  Container,
+  GridContainer,
+  Title,
+} from "./elements";
 import Top from "../Top";
 import { Loader } from "../Loader";
 
-Chart.register(RadialLinearScale, PointElement, LineElement, Filler);
+const labelToEmojiMap = {
+  ACOUSTICNESS: "🎸",
+  DANCEABILITY: "🕺",
+  ENERGY: "⚡",
+  INSTRUMENTALNESS: "🎻",
+  LIVENESS: "🔥",
+  SPEECHINESS: "🎤",
+  HAPPINESS: "😊",
+};
+
+const emojiPlugin = {
+  id: "emojiPlugin",
+  afterDraw: function (chart) {
+    const ctx = chart.ctx;
+
+    chart.data.datasets.forEach((dataset, index) => {
+      const meta = chart.getDatasetMeta(index);
+      meta.data.forEach((point, pointIndex) => {
+        const label = chart.data.labels[pointIndex];
+        const emoji = labelToEmojiMap[label];
+        if (emoji) {
+          ctx.font = "40px Arial";
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          ctx.fillText(emoji, point.x, point.y);
+        }
+      });
+    });
+  },
+};
+
+Chart.register(
+  RadialLinearScale,
+  PointElement,
+  LineElement,
+  Filler,
+  emojiPlugin
+);
 
 const ValenceScore = () => {
   const { data, isLoading } = useQuery(
@@ -69,7 +112,6 @@ const ValenceScore = () => {
     ],
     datasets: [
       {
-        label: "My First Dataset",
         data: [
           audioFeaturesObj.acousticness,
           audioFeaturesObj.danceability,
@@ -91,6 +133,17 @@ const ValenceScore = () => {
     ],
   };
 
+  const getFontSize = () => {
+    const width = window.innerWidth;
+    if (width <= 768) {
+      return 10;
+    } else if (width <= 1024) {
+      return 18;
+    } else {
+      return 20;
+    }
+  };
+
   const chartOptions = {
     scales: {
       r: {
@@ -101,14 +154,14 @@ const ValenceScore = () => {
           color: "#fff",
           showLabelBackdrop: false,
           font: {
-            size: 20,
+            size: getFontSize(),
             weight: 600,
           },
         },
         pointLabels: {
           color: "#fff",
           font: {
-            size: 20,
+            size: getFontSize(),
             weight: 600,
           },
         },
@@ -139,9 +192,12 @@ const ValenceScore = () => {
             <Loader />
           </Container>
         ) : (
-          <>
-            <Radar data={audioFeatures} key={4} options={chartOptions} />
-          </>
+          <Container>
+            <Title> A PORTRAIT OF YOUR SOUND</Title>
+            <GridContainer>
+              <Radar data={audioFeatures} key={4} options={chartOptions} />
+            </GridContainer>
+          </Container>
         )}
       </RelativeForeground>
     </>

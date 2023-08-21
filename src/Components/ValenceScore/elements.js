@@ -2,10 +2,17 @@ import styled from "@emotion/styled";
 
 export const Container = styled.div({
   display: "flex",
-  justifyContent: "space-around",
+  justifyContent: "center",
   flexDirection: "column",
   flexWrap: "wrap",
   alignItems: "center",
+});
+
+export const GridContainer = styled.div({
+  width: "60%",
+  "@media (max-width: 900px)": {
+    width: "95%",
+  },
 });
 
 export const StaticBackground = styled.div({
@@ -74,20 +81,16 @@ export const Results = styled.div(({ averageValue }) => ({
   },
 }));
 
-export const Pink = styled.text({
-  color: "#de49a2",
-  fontSize: "7vw",
+export const Title = styled.div({
   fontWeight: 600,
-  textAlign: "left",
-  width: "80%",
-  padding: "0 36px",
-  "@media (max-width: 1400px)": {
-    fontSize: "8vW",
-  },
+  fontSize: "4vw",
+  textAlign: "center",
+  margin: "5vh 0 -3vh 0",
+  width: "70%",
+  zIndex: 1,
   "@media (max-width: 900px)": {
-    fontSize: "8vh",
-  },
-  "@media (max-width: 700px)": {
-    fontSize: "7vh",
+    margin: "10vh 0 -3vh 0",
+    fontSize: "4vw",
+    width: "90%",
   },
 });
