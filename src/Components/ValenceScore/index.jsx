@@ -193,7 +193,6 @@ const ValenceScore = () => {
           </Container>
         ) : (
           <Container>
-            <Title> A PORTRAIT OF YOUR SOUND</Title>
             <GridContainer>
               <Radar data={audioFeatures} key={4} options={chartOptions} />
             </GridContainer>
