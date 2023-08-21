@@ -10,17 +10,21 @@ export const Container = styled.div({
 });
 
 export const Title = styled.text({
-  fontSize: "15vw",
+  fontSize: "5vw",
   fontWeight: 600,
   paddingBottom: 0,
   marginBottom: 0,
-
+  width: "70%",
   textAlign: "center",
   zIndex: 1,
+  "@media (max-width: 900px)": {
+    fontSize: "10vw",
+    width: "80%",
+  },
 });
 
 export const Description = styled.div({
-  fontSize: "3vw",
+  fontSize: "2vw",
   width: "70%",
   fontWeight: 600,
   textAlign: "center",

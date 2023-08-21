@@ -18,7 +18,7 @@ const User = () => {
             {data?.display_name}
           </Name>
           <Link to="/score">
-            <CalculateButton>CALCULATE</CalculateButton>
+            <CalculateButton>DISSECT TRACKS</CalculateButton>
           </Link>
         </Container>
       )}
