@@ -5,6 +5,6 @@ export const Background = styled.div({
   bottom: 0,
   right: 0,
   width: "100vw",
-  height: "100vh",
+  height: "200vh",
   backgroundColor: "#ab577e",
 });

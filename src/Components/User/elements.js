@@ -4,6 +4,11 @@ export const Container = styled.div({
   top: -30,
 });
 
+export const Row = styled.div({
+  display: "flex",
+  flexDirection: "row",
+});
+
 export const Name = styled.div({
   fontSize: "4vw",
   fontWeight: 600,

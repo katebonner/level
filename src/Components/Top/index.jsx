@@ -58,7 +58,7 @@ const Top = () => {
       <Circle2 />
       <Circle3 />
       {!isLoading && (
-        <Canvas style={{ width: "100vw", height: "120vh" }}>
+        <Canvas style={{ width: "100vw", height: "240vh" }}>
           <ambientLight intensity={2} />
           <pointLight position={[3, 0, 5]} color="yellow" intensity={50} />
           <pointLight position={[-5, 0, -5]} color="blue" intensity={50} />

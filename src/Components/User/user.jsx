@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from "react-query";
 import queryMe from "../../api/queryMe";
 import queryValence from "../../api/queryValence";
-import { Container, Name } from "./elements";
+import { Container, Name, Row } from "./elements";
 import SpotifyVisualizer from "../SpotifyVisualizer";
 
 const User = () => {
@@ -51,11 +51,25 @@ const User = () => {
     return total;
   };
 
-  console.log(averageFields(valenceData));
+  const USER_DATA = averageFields(valenceData);
+  const VALENCE_MAX = {
+    ...USER_DATA,
+    ["valence"]: 100,
+  };
+  const VALENCE_MIN = {
+    ...USER_DATA,
+    ["valence"]: 0,
+  };
+
+  console.log(VALENCE_MIN);
 
   return (
     <Container>
-      {valenceData && <SpotifyVisualizer data={averageFields(valenceData)} />}
+      {valenceData && <SpotifyVisualizer data={USER_DATA} />}
+      <Row>
+        {valenceData && <SpotifyVisualizer data={VALENCE_MIN} size={50} />}
+        {valenceData && <SpotifyVisualizer data={VALENCE_MAX} size={50} />}
+      </Row>
       <Container key={userData?.id}>
         <Name key={userData?.id}>{userData?.display_name.toUpperCase()}</Name>
       </Container>

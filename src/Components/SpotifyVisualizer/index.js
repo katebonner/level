@@ -1,14 +1,10 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 
-const SpotifyChart = ({ data }) => {
+const SpotifyChart = ({ data, size = 100 }) => {
   const meshRef = useRef();
-  console.log(Math.floor(data.valence));
-
   const Knot = () => {
     const [isHovered, setHovered] = useState(false);
-
-    console.log(data);
     useFrame(() => {
       if (meshRef.current) {
         const rotationSpeedY = isHovered ? 0.0005 : data.tempo * 0.000001;
@@ -27,7 +23,7 @@ const SpotifyChart = ({ data }) => {
         scale={1}
       >
         <torusKnotGeometry
-          args={[data.loudness / 400, data.energy / 140, 300, 300]}
+          args={[data.loudness / 500, data.energy / 140, 300, 300]}
         />
         <meshStandardMaterial
           color={`rgb(${(Math.floor(data.valence) / 100) * 255}, ${
@@ -42,7 +38,7 @@ const SpotifyChart = ({ data }) => {
   return (
     <>
       <Canvas
-        style={{ width: "100vw", height: "100vh" }}
+        style={{ width: `${size}vw`, height: `${size}vh` }}
         shadows
         camera={{ position: [0, 0, 5] }}
       >
