@@ -1,11 +1,10 @@
 :root {
   --primary-green: #1db954;
-  --black: #191414;
+  --black: #252525;
   --white: #fff;
 }
 
 .App-header {
-  background-color: var(--primary-green);
   min-height: 100vh;
   display: flex;
   flex-direction: column;

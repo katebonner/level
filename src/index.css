@@ -3,7 +3,8 @@
   --dark-green: #006641;
   --black: #191414;
   --white: #fff;
-  background-color: var(--primary-green);
+  --pink: #ab577e;
+  background-color: var(--pink);
 }
 
 body {
