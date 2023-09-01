@@ -20,15 +20,16 @@ const AlbumParticle = ({ url }) => {
     (Math.random() - 0.5) * 10
   );
   const velocity = new Vector3(
-    (Math.random() - 0.5) * 0.05,
-    (Math.random() - 0.5) * 0.05,
-    (Math.random() - 0.5) * 0.05
+    (Math.random() - 0.5) * 0.005,
+    (Math.random() - 0.5) * 0.005,
+    (Math.random() - 0.5) * 0.005
   );
 
   useFrame(() => {
     if (mesh.current) {
+      mesh.current.rotation.y = 5;
       mesh.current.position.add(velocity);
-      if (mesh.current.position.length() > 5) {
+      if (mesh.current.position.length() > 8) {
         velocity.negate();
       }
     }
@@ -38,7 +39,7 @@ const AlbumParticle = ({ url }) => {
 
   return (
     <mesh ref={mesh} position={initialPos}>
-      <boxGeometry args={[0.05, 1]} />
+      <boxGeometry args={[0.01, 1]} />
       <meshStandardMaterial side={DoubleSide} map={texture} />
     </mesh>
   );
@@ -60,6 +61,15 @@ const Top = () => {
           <pointLight position={[3, 0, 5]} color="yellow" intensity={3} />
           <pointLight position={[-5, 0, -5]} color="blue" intensity={5} />
           <pointLight position={[0, 5, 0]} color="red" intensity={5} />
+          {albumCovers.map((url, index) => (
+            <AlbumParticle key={index} url={url} />
+          ))}
+          {albumCovers.map((url, index) => (
+            <AlbumParticle key={index} url={url} />
+          ))}
+          {albumCovers.map((url, index) => (
+            <AlbumParticle key={index} url={url} />
+          ))}
           {albumCovers.map((url, index) => (
             <AlbumParticle key={index} url={url} />
           ))}
