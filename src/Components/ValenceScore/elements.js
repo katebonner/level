@@ -6,6 +6,7 @@ export const Container = styled.div({
   flexDirection: "column",
   flexWrap: "wrap",
   alignItems: "center",
+  zIndex: 10,
 });
 
 export const GridContainer = styled.div({

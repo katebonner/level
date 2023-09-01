@@ -1,13 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import {
-  Container,
-  Description,
-  ValenceButton,
-  Circle,
-  Circle2,
-  Circle3,
-} from "./elements";
+import { Container, Circle, Circle2, Circle3 } from "./elements";
+import User from "../../Components/User/user";
+import Top from "../../Components/Top";
+import { StaticBackground } from "./elements";
+import FadeOverlay from "../../Components/FadeOverlay";
 
 const Intro = () => {
   return (
@@ -15,9 +11,11 @@ const Intro = () => {
       <Circle />
       <Circle2 />
       <Circle3 />
-      <Link to="/valence">
-        <ValenceButton>PROCEED</ValenceButton>
-      </Link>
+      <StaticBackground>
+        <Top></Top>
+      </StaticBackground>
+      <User></User>
+      <FadeOverlay />
     </Container>
   );
 };

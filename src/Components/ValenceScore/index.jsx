@@ -17,7 +17,6 @@ import {
   GridContainer,
 } from "./elements";
 import Top from "../Top";
-import { Loader } from "../Loader";
 
 Chart.register(RadialLinearScale, PointElement, LineElement, Filler);
 
@@ -145,14 +144,12 @@ const ValenceScore = () => {
 
   return (
     <>
-      <StaticBackground>
+      {/* <StaticBackground>
         <Top />
-      </StaticBackground>
+      </StaticBackground> */}
       <RelativeForeground>
         {isLoading ? (
-          <Container>
-            <Loader />
-          </Container>
+          <Container></Container>
         ) : (
           <Container>
             <GridContainer>
