@@ -9,6 +9,42 @@ export const Container = styled.div({
   zIndex: 1,
 });
 
+export const Circle = styled.div({
+  position: "fixed",
+  bottom: "-10vh",
+  right: "-70vh",
+  width: "120vh",
+  height: "120vh",
+  borderRadius: "50%",
+  backgroundColor: "yellow",
+  opacity: "0.5",
+  filter: "blur(200px)",
+});
+
+export const Circle2 = styled.div({
+  position: "fixed",
+  bottom: "-10vh",
+  left: "-70vh",
+  width: "120vh",
+  height: "120vh",
+  borderRadius: "50%",
+  backgroundColor: "blue",
+  opacity: "0.4",
+  filter: "blur(200px)",
+});
+
+export const Circle3 = styled.div({
+  position: "fixed",
+  top: "-70vh",
+  left: "0vh",
+  width: "120vh",
+  height: "120vh",
+  borderRadius: "50%",
+  backgroundColor: "red",
+  opacity: "0.5",
+  filter: "blur(200px)",
+});
+
 export const Title = styled.text({
   fontSize: "5vw",
   fontWeight: 600,
@@ -46,22 +82,11 @@ export const ValenceButton = styled.button({
   borderStyle: "solid",
   fontSize: "0.7em",
   marginTop: "10%",
-  fontWeight: 600,
+  fontWeight: 400,
   color: "#fff",
   position: "relative",
   zIndex: 99999,
   "&:hover": {
-    backgroundColor: "#de49a2",
-    borderColor: "transparent",
+    backgroundColor: "rgba(255,255,255,0.3)",
   },
-});
-
-export const Circle = styled.div({
-  position: "fixed",
-  bottom: "10vh",
-  left: "-50vw",
-  width: "200vw",
-  height: "200vh",
-  borderRadius: "50%",
-  backgroundColor: "#006641",
 });

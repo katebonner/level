@@ -15,49 +15,11 @@ import {
   RelativeForeground,
   Container,
   GridContainer,
-  Title,
 } from "./elements";
 import Top from "../Top";
 import { Loader } from "../Loader";
 
-const labelToEmojiMap = {
-  ACOUSTICNESS: "🎸",
-  DANCEABILITY: "🕺",
-  ENERGY: "⚡",
-  INSTRUMENTALNESS: "🎻",
-  LIVENESS: "🔥",
-  SPEECHINESS: "🎤",
-  HAPPINESS: "😊",
-};
-
-const emojiPlugin = {
-  id: "emojiPlugin",
-  afterDraw: function (chart) {
-    const ctx = chart.ctx;
-
-    chart.data.datasets.forEach((dataset, index) => {
-      const meta = chart.getDatasetMeta(index);
-      meta.data.forEach((point, pointIndex) => {
-        const label = chart.data.labels[pointIndex];
-        const emoji = labelToEmojiMap[label];
-        if (emoji) {
-          ctx.font = "40px Arial";
-          ctx.textAlign = "center";
-          ctx.textBaseline = "middle";
-          ctx.fillText(emoji, point.x, point.y);
-        }
-      });
-    });
-  },
-};
-
-Chart.register(
-  RadialLinearScale,
-  PointElement,
-  LineElement,
-  Filler,
-  emojiPlugin
-);
+Chart.register(RadialLinearScale, PointElement, LineElement, Filler);
 
 const ValenceScore = () => {
   const { data, isLoading } = useQuery(
@@ -123,10 +85,10 @@ const ValenceScore = () => {
         ],
         fill: true,
         responsive: true,
-        backgroundColor: "rgba(29, 185, 84, 0.2)",
-        borderColor: "rgb(29, 185, 84)",
-        pointBackgroundColor: "rgb(29, 185, 84)",
-        pointBorderColor: "rgb(29, 185, 84)",
+        backgroundColor: "rgba(255, 255, 255, 0.2)",
+        borderColor: "rgb(255, 255, 255)",
+        pointBackgroundColor: "rgb(255, 255, 255)",
+        pointBorderColor: "rgb(255, 255, 255)",
         pointHoverBackgroundColor: "#fff",
         pointHoverBorderColor: "#fff",
       },

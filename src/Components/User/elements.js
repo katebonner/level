@@ -21,9 +21,9 @@ export const CalculateButton = styled.button({
   fontSize: "0.7em",
   zIndex: 5,
   color: "#fff",
+
   "&:hover": {
-    backgroundColor: "#de49a2",
-    borderColor: "transparent",
+    backgroundColor: "rgba(255,255,255,0.3)",
   },
 });
 
