@@ -49,11 +49,8 @@ export const Description = styled.div({
   fontSize: "2vw",
   fontWeight: 600,
   position: "absolute",
-  left: "64px",
-  marginTop: "20%",
-  opacity: 0.6,
-  "@media (max-width: 900px)": {
-    fontSize: "3.2vw",
-    marginTop: "22%",
-  },
+  opacity: 0.2,
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
 });

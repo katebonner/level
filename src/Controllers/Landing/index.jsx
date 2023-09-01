@@ -53,8 +53,8 @@ const Landing = () => {
         <pointLight position={[0, 5, 0]} color="red" intensity={50} />
         <Cube />
       </Canvas>
-      <Logo>SYNETHESIA</Logo>
-      <Description>tap the spiral to sync with spotify</Description>
+      {/* <Logo>SYNETHESIA</Logo> */}
+      <Description>TAP THE SPIRAL TO SYNC WITH SPOTIFY</Description>
     </>
   );
 };
