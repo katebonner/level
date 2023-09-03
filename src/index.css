@@ -401,3 +401,19 @@ a {
   color: #e93d1e;
   text-decoration: underline;
 }
+
+.canvas-container {
+  position: absolute;
+  top: 50%;
+  left: 43%;
+  transform: translate(-50%, -10%);
+  height: 500px;
+  width: 800px;
+}
+
+@media (max-width: 900px) {
+  .canvas-container {
+    height: 250px;
+    width: 400px;
+  }
+}

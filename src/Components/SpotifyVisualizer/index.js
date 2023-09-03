@@ -5,10 +5,16 @@ const SpotifyChart = ({ data, size = 100 }) => {
   const meshRef = useRef();
   const Knot = () => {
     const [isHovered, setHovered] = useState(false);
+    const gValue = Math.floor((data?.valence / 100) * 255);
+    const bValue = 255 - gValue;
+    const tempo = data?.tempo / 100;
+    const danceability = data?.danceability;
+    const energy = data?.energy / 100;
+    const loudness = data?.loudness / 100;
     useFrame(() => {
       if (meshRef.current) {
-        const rotationSpeedY = isHovered ? 0.0005 : data.tempo * 0.000001;
-        const rotationSpeedX = isHovered ? 0.0005 : data.danceability * 0.0002;
+        const rotationSpeedY = isHovered ? 0.0005 : tempo / 2500;
+        const rotationSpeedX = isHovered ? 0.0005 : danceability / 2500;
 
         meshRef.current.rotation.x += rotationSpeedX;
         meshRef.current.rotation.y += rotationSpeedY;
@@ -22,13 +28,9 @@ const SpotifyChart = ({ data, size = 100 }) => {
         onPointerOut={() => setHovered(false)}
         scale={1}
       >
-        <torusKnotGeometry
-          args={[data.loudness / 500, data.energy / 140, 300, 300]}
-        />
+        <torusKnotGeometry args={[loudness / 5, energy, 300, 300]} />
         <meshStandardMaterial
-          color={`rgb(${(Math.floor(data.valence) / 100) * 255}, ${
-            (Math.floor(data.valence) / 100) * 255
-          }, 0)`}
+          color={`rgb(255, ${gValue}, ${bValue})`}
           roughness={0}
         />
       </mesh>

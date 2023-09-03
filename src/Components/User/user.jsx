@@ -4,6 +4,7 @@ import queryMe from "../../api/queryMe";
 import queryValence from "../../api/queryValence";
 import { Container, Name, Row } from "./elements";
 import SpotifyVisualizer from "../SpotifyVisualizer";
+import SpotifyChart from "../Chart";
 
 const User = () => {
   const { data: userData, isLoading: userLoading } = useQuery(
@@ -44,9 +45,11 @@ const User = () => {
       }
       return acc;
     }, {});
+
     // Divide the sum of each field by the number of objects in the array
+    // and then apply Math.floor() to the results
     for (let key in total) {
-      total[key] = (total[key] / arr.length) * 100;
+      total[key] = Math.floor((total[key] / arr.length) * 100);
     }
     return total;
   };
@@ -61,18 +64,72 @@ const User = () => {
     ["valence"]: 0,
   };
 
-  console.log(VALENCE_MIN);
+  const DANCEABILITY_MAX = {
+    ...USER_DATA,
+    ["danceability"]: 100,
+  };
+  const DANCEABILITY_MIN = {
+    ...USER_DATA,
+    ["danceability"]: 0,
+  };
+
+  const ENERGY_MAX = {
+    ...USER_DATA,
+    ["energy"]: 100,
+  };
+  const ENERGY_MIN = {
+    ...USER_DATA,
+    ["energy"]: 1,
+  };
+
+  const LOUDNESS_MAX = {
+    ...USER_DATA,
+    ["loudness"]: 999,
+  };
+  const LOUDNESS_MIN = {
+    ...USER_DATA,
+    ["loudness"]: -999,
+  };
+
+  const TEMPO_MAX = {
+    ...USER_DATA,
+    ["tempo"]: 50000,
+  };
+  const TEMPO_MIN = {
+    ...USER_DATA,
+    ["tempo"]: 0,
+  };
+
+  console.log(USER_DATA);
 
   return (
     <Container>
-      {valenceData && <SpotifyVisualizer data={USER_DATA} />}
-      <Row>
-        {valenceData && <SpotifyVisualizer data={VALENCE_MIN} size={50} />}
-        {valenceData && <SpotifyVisualizer data={VALENCE_MAX} size={50} />}
-      </Row>
+      {USER_DATA && <SpotifyVisualizer data={USER_DATA} />}
       <Container key={userData?.id}>
         <Name key={userData?.id}>{userData?.display_name.toUpperCase()}</Name>
+        <SpotifyChart data={USER_DATA} />
       </Container>
+
+      {/* <Row>
+        {VALENCE_MIN && <SpotifyVisualizer data={VALENCE_MIN} size={50} />}
+        {VALENCE_MAX && <SpotifyVisualizer data={VALENCE_MAX} size={50} />}
+      </Row> */}
+      {/* <Row>
+        {VALENCE_MIN && <SpotifyVisualizer data={DANCEABILITY_MIN} size={50} />}
+        {VALENCE_MAX && <SpotifyVisualizer data={DANCEABILITY_MAX} size={50} />}
+      </Row>
+      <Row>
+        {VALENCE_MIN && <SpotifyVisualizer data={ENERGY_MIN} size={50} />}
+        {VALENCE_MAX && <SpotifyVisualizer data={ENERGY_MAX} size={50} />}
+      </Row>
+      <Row>
+        {VALENCE_MIN && <SpotifyVisualizer data={LOUDNESS_MIN} size={50} />}
+        {VALENCE_MAX && <SpotifyVisualizer data={LOUDNESS_MAX} size={50} />}
+      </Row>
+      <Row>
+        {VALENCE_MIN && <SpotifyVisualizer data={TEMPO_MIN} size={50} />}
+        {VALENCE_MAX && <SpotifyVisualizer data={TEMPO_MAX} size={50} />}
+      </Row> */}
     </Container>
   );
 };
