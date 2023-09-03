@@ -23,7 +23,7 @@ const SpotifyChart = ({ data }) => {
       const chart = new Chart(chartRef.current, {
         type: "bar",
         data: {
-          labels: ["Danceability", "Energy", "Happiness", "Loudness", "Tempo"],
+          labels: ["Danceability", "Energy", "Happiness", "Loudness"],
           datasets: [
             {
               label: "Song Attributes",
@@ -32,26 +32,9 @@ const SpotifyChart = ({ data }) => {
                 data.energy,
                 data.valence,
                 Math.abs((60 + data.loudness / 1000) / 0.6),
-                data.tempo / 100,
               ],
-              backgroundColor: [
-                "rgba(255,255,255,0.3)",
-                "rgba(255,255,255,0.3)",
-                "rgba(255,255,255,0.3)",
-                "rgba(255,255,255,0.3)",
-                "rgba(255,255,255,0.3)",
-                "rgba(255,255,255,0.3)",
-                "rgba(255,255,255,0.3)",
-              ],
-              borderColor: [
-                "rgba(255,255,255,0.3)",
-                "rgba(255,255,255,0.3)",
-                "rgba(255,255,255,0.3)",
-                "rgba(255,255,255,0.3)",
-                "rgba(255,255,255,0.3)",
-                "rgba(255,255,255,0.3)",
-                "rgba(255,255,255,0.3)",
-              ],
+              backgroundColor: ["rgba(255,255,255,0.6)"],
+              borderColor: ["rgba(255,255,255,0.6)"],
               borderWidth: 1,
             },
           ],
@@ -65,30 +48,30 @@ const SpotifyChart = ({ data }) => {
               borderCapStyle: "round",
               borderDash: [],
               borderWidth: 2,
-              color: "rgba(255,255,255,0.3)",
+              color: "rgba(255,255,255,1)",
               beginAtZero: true,
               max: 100,
               ticks: {
-                color: "rgba(255,255,255,0.3)",
+                color: "rgba(255,255,255,1)",
                 font: {
                   size: 18,
                 },
               },
               grid: {
-                color: "rgba(255,255,255,0.3)",
+                color: "rgba(255,255,255,1",
               },
             },
             y: {
               beginAtZero: true,
               max: 100,
               ticks: {
-                color: "rgba(255,255,255,0.3)",
+                color: "rgba(255,255,255,1)",
                 font: {
                   size: 18,
                 },
               },
               grid: {
-                color: "rgba(255,255,255,0.3)",
+                color: "rgba(255,255,255,1)",
                 borderColor: "rgba(255,255,255,0.3)",
               },
             },

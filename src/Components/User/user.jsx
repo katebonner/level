@@ -2,9 +2,19 @@ import React from "react";
 import { useQuery } from "react-query";
 import queryMe from "../../api/queryMe";
 import queryValence from "../../api/queryValence";
-import { Container, Name, Row } from "./elements";
+import {
+  Container,
+  Name,
+  Row,
+  Description,
+  Section,
+  SectionText,
+  Result,
+  SectionContainer,
+} from "./elements";
 import SpotifyVisualizer from "../SpotifyVisualizer";
 import SpotifyChart from "../Chart";
+import ProgressBar from "../Bar";
 
 const User = () => {
   const { data: userData, isLoading: userLoading } = useQuery(
@@ -54,7 +64,12 @@ const User = () => {
     return total;
   };
 
-  const USER_DATA = averageFields(valenceData);
+  let USER_DATA = averageFields(valenceData);
+  USER_DATA = {
+    ...USER_DATA,
+    ["loudness"]: Math.floor((60 + USER_DATA.loudness / 1000) / 0.6),
+  };
+
   const VALENCE_MAX = {
     ...USER_DATA,
     ["valence"]: 100,
@@ -107,8 +122,91 @@ const User = () => {
       {USER_DATA && <SpotifyVisualizer data={USER_DATA} />}
       <Container key={userData?.id}>
         <Name key={userData?.id}>{userData?.display_name.toUpperCase()}</Name>
-        <SpotifyChart data={USER_DATA} />
+        <Description>SCROLL TO VIEW YOUR SPOTIFY STATS</Description>
+        {/* <SpotifyChart data={USER_DATA} /> */}
       </Container>
+      <div
+        style={{
+          position: "absolute",
+          width: "100%",
+          height: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <div style={{ width: "80%" }}>
+          <Row>
+            <SectionContainer>
+              <Section>😊 HAPPINESS</Section>
+              <Result>{USER_DATA.valence}%</Result>
+              <ProgressBar progress={USER_DATA.valence} />
+              <SectionText>
+                happiness gives your sprial its color. the more positive the
+                track, the more yellow. the more negative the track, the more
+                pink.
+              </SectionText>
+            </SectionContainer>
+            <SectionContainer>
+              <Section>🕺🏾 DANCEABILITY</Section>
+              <Result>{USER_DATA.danceability}%</Result>
+
+              <ProgressBar progress={USER_DATA.danceability} />
+              <SectionText>
+                danceability gives your spiral its thickness. the dancibility of
+                a track is determined by tempo, rhythm stability, beat strength,
+                and overall regularity.
+              </SectionText>
+            </SectionContainer>
+          </Row>
+          <Row>
+            <SectionContainer>
+              <Section>⚡ ENERGY</Section>
+              <Result>{USER_DATA.energy}%</Result>
+
+              <ProgressBar progress={USER_DATA.energy} />
+              <SectionText>
+                energy gives your spiral its rotation speed. energy represents a
+                perceptual measure of intensity and activity.
+              </SectionText>
+            </SectionContainer>
+            <SectionContainer>
+              <Section>🔊 LOUDNESS</Section>
+              <Result>{USER_DATA.loudness}%</Result>
+              <ProgressBar progress={USER_DATA.loudness} />
+              <SectionText>
+                loudness gives your spiral its size. loudness is the quality of
+                a sound that is the primary psychological correlate of strength
+                (amplitude).
+              </SectionText>
+            </SectionContainer>
+          </Row>
+          <Row>
+            <SectionContainer>
+              <Section>🎙️LIVENESS</Section>
+              <Result>{USER_DATA.liveness}%</Result>
+              <ProgressBar progress={USER_DATA.liveness} />
+              <SectionText>
+                liveness gives your spiral its degree of reduced rotation speed
+                (how much it slows down) on hover. liveness detects the presence
+                of an audience in a track (that the recording was performed
+                live).
+              </SectionText>
+            </SectionContainer>
+            <SectionContainer>
+              <Section>🎹 INSTRUMENTALNESS</Section>
+              <Result>{USER_DATA.instrumentalness}%</Result>
+              <ProgressBar progress={USER_DATA.instrumentalness} />
+              <SectionText>
+                instrumentalness gives your spiral its shine. instrumentalness
+                predicts whether a track contains no vocals. "ooh" and "ahh"
+                sounds are treated as instrumental in this context. rap or
+                spoken word tracks are vocal.".
+              </SectionText>
+            </SectionContainer>
+          </Row>
+        </div>
+      </div>
 
       {/* <Row>
         {VALENCE_MIN && <SpotifyVisualizer data={VALENCE_MIN} size={50} />}
