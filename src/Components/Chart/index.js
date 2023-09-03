@@ -23,7 +23,7 @@ const SpotifyChart = ({ data }) => {
       const chart = new Chart(chartRef.current, {
         type: "bar",
         data: {
-          labels: ["Danceability", "Energy", "Happiness", "Loudness"],
+          labels: ["Danceability", "Energy", "Happiness", "Loudness", "Tempo"],
           datasets: [
             {
               label: "Song Attributes",
@@ -32,6 +32,7 @@ const SpotifyChart = ({ data }) => {
                 data.energy,
                 data.valence,
                 Math.abs((60 + data.loudness / 1000) / 0.6),
+                data.tempo / 100,
               ],
               backgroundColor: [
                 "rgba(255,255,255,0.3)",
