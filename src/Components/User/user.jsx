@@ -142,20 +142,19 @@ const User = () => {
               <Result>{USER_DATA.valence}%</Result>
               <ProgressBar progress={USER_DATA.valence} />
               <SectionText>
-                happiness gives your sprial its color. the more positive the
-                track, the more yellow. the more negative the track, the more
-                pink.
+                happiness gives your sprial its color. the more positive your
+                top spotify track, the more yellow. the more negative the
+                tracks, the more pink.
               </SectionText>
             </SectionContainer>
             <SectionContainer>
               <Section>🕺🏾 DANCEABILITY</Section>
               <Result>{USER_DATA.danceability}%</Result>
-
               <ProgressBar progress={USER_DATA.danceability} />
               <SectionText>
                 danceability gives your spiral its thickness. the dancibility of
-                a track is determined by tempo, rhythm stability, beat strength,
-                and overall regularity.
+                your tracks is determined by tempo, rhythm stability, beat
+                strength, and overall regularity.
               </SectionText>
             </SectionContainer>
           </Row>
@@ -163,7 +162,6 @@ const User = () => {
             <SectionContainer>
               <Section>⚡ ENERGY</Section>
               <Result>{USER_DATA.energy}%</Result>
-
               <ProgressBar progress={USER_DATA.energy} />
               <SectionText>
                 energy gives your spiral its rotation speed. energy represents a
@@ -189,8 +187,8 @@ const User = () => {
               <SectionText>
                 liveness gives your spiral its degree of reduced rotation speed
                 (how much it slows down) on hover. liveness detects the presence
-                of an audience in a track (that the recording was performed
-                live).
+                of an audience in your top tracks (that the recording was
+                performed live).
               </SectionText>
             </SectionContainer>
             <SectionContainer>
@@ -199,9 +197,9 @@ const User = () => {
               <ProgressBar progress={USER_DATA.instrumentalness} />
               <SectionText>
                 instrumentalness gives your spiral its shine. instrumentalness
-                predicts whether a track contains no vocals. "ooh" and "ahh"
+                predicts whether your tracks contains no vocals. "ooh" and "ahh"
                 sounds are treated as instrumental in this context. rap or
-                spoken word tracks are vocal.".
+                spoken word tracks are vocal.
               </SectionText>
             </SectionContainer>
           </Row>
