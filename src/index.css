@@ -5,11 +5,12 @@
   --white: #fff;
   --pink: #ab577e;
   background-color: var(--pink);
+  font-family: "Syne", Helvetica, Arial, Helvetica, sans-serif;
 }
 
 body {
   margin: 0;
-  font-family: Circular, Helvetica, Arial, sans-serif;
+  /* font-family: Circular, Helvetica, Arial, sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -223,115 +224,8 @@ a {
   margin: 10%;
 }
 
-.floating {
-  animation-name: floating;
-  animation-duration: 2.5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-}
-
 .hide {
   display: none;
-}
-
-@keyframes floating {
-  0% {
-    transform: translate(0, 0px);
-  }
-  50% {
-    transform: translate(0, 15px);
-  }
-  100% {
-    transform: translate(0, -0px);
-  }
-}
-
-.floating2 {
-  animation-name: floating2;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-}
-
-@keyframes floating2 {
-  0% {
-    transform: translate(0, 0px);
-  }
-  50% {
-    transform: translate(0, 25px);
-  }
-  100% {
-    transform: translate(0, -0px);
-  }
-}
-
-.floating3 {
-  animation-name: floating3;
-  animation-duration: 2.75s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-}
-
-@keyframes floating3 {
-  0% {
-    transform: translate(0, 0px);
-  }
-  50% {
-    transform: translate(0, 20px);
-  }
-  100% {
-    transform: translate(0, -0px);
-  }
-}
-
-.orbit {
-  width: 100px;
-  height: 100px;
-  border-radius: 100px;
-  position: relative;
-  top: -250px;
-
-  -webkit-animation: myOrbit 15s linear infinite; /* Chrome, Safari 5 */
-  -moz-animation: myOrbit 15s linear infinite; /* Firefox 5-15 */
-  -o-animation: myOrbit 15s linear infinite; /* Opera 12+ */
-  animation: myOrbit 15s linear infinite; /* Chrome, Firefox 16+, 
-                                                    IE 10+, Safari 5 */
-}
-
-@-webkit-keyframes myOrbit {
-  from {
-    -webkit-transform: rotate(0deg) translateX(200px) rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg) translateX(200px) rotate(-360deg);
-  }
-}
-
-@-moz-keyframes myOrbit {
-  from {
-    -moz-transform: rotate(0deg) translateX(200px) rotate(0deg);
-  }
-  to {
-    -moz-transform: rotate(360deg) translateX(200px) rotate(-360deg);
-  }
-}
-
-@-o-keyframes myOrbit {
-  from {
-    -o-transform: rotate(0deg) translateX(200px) rotate(0deg);
-  }
-  to {
-    -o-transform: rotate(360deg) translateX(200px) rotate(-360deg);
-  }
-}
-
-@keyframes myOrbit {
-  from {
-    transform: rotate(0deg) translateX(200px) rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg) translateX(200px) rotate(-360deg);
-  }
 }
 
 @media screen and (max-width: 1000px) {
@@ -416,4 +310,27 @@ a {
     height: 250px;
     width: 400px;
   }
+}
+
+@font-face {
+  font-family: "Syne";
+  src: local("Syne-ExtraBold"),
+    url("./fonts/Syne-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Syne";
+  src: local("Syne-SemiBold"),
+    url("./fonts/Syne-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Syne";
+  src: local("Syne-Regular"), url("./fonts/Syne-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
 }

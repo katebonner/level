@@ -47,7 +47,7 @@ export const Circle3 = styled.div({
 
 export const Description = styled.div({
   fontSize: "2vw",
-  fontWeight: 600,
+  fontWeight: 400,
   position: "absolute",
   opacity: 0.2,
   top: "50%",

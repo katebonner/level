@@ -10,6 +10,8 @@ import {
   Section,
   SectionText,
   Result,
+  Icon,
+  RowFixed,
   SectionContainer,
 } from "./elements";
 import SpotifyVisualizer from "../SpotifyVisualizer";
@@ -138,21 +140,28 @@ const User = () => {
         <div style={{ width: "80%" }}>
           <Row>
             <SectionContainer>
-              <Section>😊 HAPPINESS</Section>
+              <RowFixed>
+                <Icon>😊</Icon>
+                <Section>HAPPINESS</Section>
+              </RowFixed>
+
               <Result>{USER_DATA.valence}%</Result>
               <ProgressBar progress={USER_DATA.valence} />
               <SectionText>
-                happiness gives your sprial its color. the more positive your
-                top spotify track, the more yellow. the more negative the
+                Happiness gives your sprial its color. The more positive your
+                top spotify track, the more yellow. The more negative the
                 tracks, the more pink.
               </SectionText>
             </SectionContainer>
             <SectionContainer>
-              <Section>🕺🏾 DANCEABILITY</Section>
+              <RowFixed>
+                <Icon>🕺🏾</Icon>
+                <Section>DANCEABILITY</Section>
+              </RowFixed>
               <Result>{USER_DATA.danceability}%</Result>
               <ProgressBar progress={USER_DATA.danceability} />
               <SectionText>
-                danceability gives your spiral its thickness. the dancibility of
+                Danceability gives your spiral its thickness. The dancibility of
                 your tracks is determined by tempo, rhythm stability, beat
                 strength, and overall regularity.
               </SectionText>
@@ -160,16 +169,23 @@ const User = () => {
           </Row>
           <Row>
             <SectionContainer>
-              <Section>⚡ ENERGY</Section>
+              <RowFixed>
+                <Icon>⚡</Icon>
+                <Section>ENERGY</Section>
+              </RowFixed>
               <Result>{USER_DATA.energy}%</Result>
               <ProgressBar progress={USER_DATA.energy} />
               <SectionText>
-                energy gives your spiral its rotation speed. energy represents a
+                Energy gives your spiral its rotation speed. Energy represents a
                 perceptual measure of intensity and activity.
               </SectionText>
             </SectionContainer>
             <SectionContainer>
-              <Section>🔊 LOUDNESS</Section>
+              <RowFixed>
+                <Icon>🔊</Icon>
+                <Section>LOUDNESS</Section>
+              </RowFixed>
+
               <Result>{USER_DATA.loudness}%</Result>
               <ProgressBar progress={USER_DATA.loudness} />
               <SectionText>
@@ -181,7 +197,11 @@ const User = () => {
           </Row>
           <Row>
             <SectionContainer>
-              <Section>🎙️LIVENESS</Section>
+              <RowFixed>
+                <Icon>🎙️</Icon>
+                <Section>LIVENESS</Section>
+              </RowFixed>
+
               <Result>{USER_DATA.liveness}%</Result>
               <ProgressBar progress={USER_DATA.liveness} />
               <SectionText>
@@ -192,7 +212,11 @@ const User = () => {
               </SectionText>
             </SectionContainer>
             <SectionContainer>
-              <Section>🎹 INSTRUMENTALNESS</Section>
+              <RowFixed>
+                <Icon>🎹</Icon>
+                <Section>INSTRUMENTALNESS</Section>
+              </RowFixed>
+
               <Result>{USER_DATA.instrumentalness}%</Result>
               <ProgressBar progress={USER_DATA.instrumentalness} />
               <SectionText>

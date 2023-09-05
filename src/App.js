@@ -43,7 +43,13 @@ function App() {
             <div className="justify-right margin-medium">
               <button
                 className="connect bold"
-                style={{ position: "fixed", right: "5%", top: "5%" }}
+                style={{
+                  position: "fixed",
+                  right: "5%",
+                  top: "5%",
+                  fontFamily: "Syne",
+                  fontWeight: 600,
+                }}
                 onClick={logout}
               >
                 DISCONNECT

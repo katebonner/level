@@ -12,38 +12,49 @@ export const Row = styled.div({
   },
 });
 
+export const RowFixed = styled.div({
+  display: "flex",
+  flexDirection: "row",
+  alignItems: "center",
+  justifyContent: "center",
+  "@media (max-width: 900px)": {
+    justifyContent: "flex-start",
+  },
+});
+
 export const Name = styled.div({
   fontSize: "4vw",
-  fontWeight: 600,
+  fontWeight: 800,
   position: "absolute",
+  textAlign: "center",
   opacity: 0.6,
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
   "@media (max-width: 900px)": {
     fontSize: "8vw",
-    textAlign: "center",
   },
 });
 
 export const Description = styled.div({
   fontSize: "2vw",
-  fontWeight: 600,
+  fontWeight: 400,
   position: "absolute",
   opacity: 0.6,
-  top: "57%",
+  top: "63%",
   left: "50%",
   textAlign: "center",
   width: "100%",
   transform: "translate(-50%, -50%)",
+  "@media (max-width: 1200px)": {
+    top: "60%",
+  },
   "@media (max-width: 900px)": {
     fontSize: "2vw",
-    textAlign: "center",
     top: "61%",
   },
   "@media (max-width: 700px)": {
     fontSize: "3vw",
-    textAlign: "center",
     top: "59%",
   },
 });
@@ -89,9 +100,24 @@ export const SectionText = styled.div({
 });
 
 export const Result = styled.div({
-  fontSize: "8vw",
+  fontSize: "6vw",
   fontWeight: 600,
   margin: "0 0 5% 0",
+  textAlign: "center",
+  "@media (max-width: 900px)": {
+    fontSize: "8vw",
+    textAlign: "left",
+  },
+  "@media (max-width: 700px)": {
+    fontSize: "9vw",
+  },
+});
+
+export const Icon = styled.div({
+  fontSize: "4vw",
+  margin: "0 3% 0 0",
+  fontWeight: 600,
+
   textAlign: "center",
   "@media (max-width: 900px)": {
     fontSize: "10vw",
