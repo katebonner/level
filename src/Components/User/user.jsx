@@ -147,9 +147,10 @@ const User = () => {
 
               <Result>{USER_DATA.valence}%</Result>
               <ProgressBar progress={USER_DATA.valence} />
+
               <SectionText>
-                Happiness gives your sprial its color. The more positive your
-                top spotify track, the more yellow. The more negative the
+                happiness gives your sprial its color. the more positive your
+                top spotify track, the more yellow. the more negative the
                 tracks, the more pink.
               </SectionText>
             </SectionContainer>
@@ -161,7 +162,7 @@ const User = () => {
               <Result>{USER_DATA.danceability}%</Result>
               <ProgressBar progress={USER_DATA.danceability} />
               <SectionText>
-                Danceability gives your spiral its thickness. The dancibility of
+                danceability gives your spiral its thickness. the dancibility of
                 your tracks is determined by tempo, rhythm stability, beat
                 strength, and overall regularity.
               </SectionText>
@@ -176,7 +177,7 @@ const User = () => {
               <Result>{USER_DATA.energy}%</Result>
               <ProgressBar progress={USER_DATA.energy} />
               <SectionText>
-                Energy gives your spiral its rotation speed. Energy represents a
+                energy gives your spiral its rotation speed. energy represents a
                 perceptual measure of intensity and activity.
               </SectionText>
             </SectionContainer>

@@ -334,3 +334,10 @@ a {
   font-weight: 400;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Syne";
+  src: local("Syne-Bold"), url("./fonts/Syne-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}

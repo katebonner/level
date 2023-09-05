@@ -71,8 +71,8 @@ export const SectionContainer = styled.div({
 });
 
 export const Section = styled.div({
-  fontSize: "2.2vw",
-  fontWeight: 600,
+  fontSize: "2vw",
+  fontWeight: 700,
   textAlign: "center",
   margin: "4% 0 2% 0",
 
@@ -91,17 +91,17 @@ export const SectionText = styled.div({
   textAlign: "center",
   margin: "5% 0 0 0",
   "@media (max-width: 900px)": {
-    fontSize: "2vw",
+    fontSize: "3vw",
     textAlign: "left",
   },
   "@media (max-width: 700px)": {
-    fontSize: "2.5vw",
+    fontSize: "4vw",
   },
 });
 
 export const Result = styled.div({
   fontSize: "6vw",
-  fontWeight: 600,
+  fontWeight: 700,
   margin: "0 0 5% 0",
   textAlign: "center",
   "@media (max-width: 900px)": {
