@@ -16,9 +16,9 @@ const containerStyles = css`
   opacity: 0.6;
   border-radius: 100px;
   overflow: hidden;
-  height: 50px;
+  height: 1vw;
   z-index: 10;
-  margin: 2% 0 2% 0;
+  margin: 0 2% 0 2%;
 `;
 
 const barStyles = (progress) => css`

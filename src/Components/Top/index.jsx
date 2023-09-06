@@ -5,13 +5,23 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { TextureLoader, DoubleSide, Vector3 } from "three";
 import { Circle, Circle2, Circle3 } from "../../Controllers/Landing/elements";
 import { Background } from "./elements";
+import { DataTexture, RGBAFormat, UnsignedByteType } from "three";
 
 const AlbumParticle = ({ url }) => {
   const texture = useMemo(() => {
     if (url) {
       return new TextureLoader().load(url);
     }
-    return null;
+    const transparentWhiteData = new Uint8Array([255, 255, 255, 0]);
+    const transparentWhiteTexture = new DataTexture(
+      transparentWhiteData,
+      1,
+      1,
+      RGBAFormat,
+      UnsignedByteType
+    );
+
+    return transparentWhiteTexture;
   }, [url]);
 
   const mesh = useRef();

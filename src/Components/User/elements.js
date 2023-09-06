@@ -1,9 +1,5 @@
 import styled from "@emotion/styled";
 
-export const Container = styled.div({
-  top: -30,
-});
-
 export const Row = styled.div({
   display: "flex",
   flexDirection: "row",
@@ -16,54 +12,47 @@ export const RowFixed = styled.div({
   display: "flex",
   flexDirection: "row",
   alignItems: "center",
-  justifyContent: "center",
+  justifyContent: "flex-end",
+});
+
+export const AbsolutePosition = styled.div({
+  position: "absolute",
+  top: "80%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  height: "130vh",
+});
+
+export const ScoreContainer = styled.div({
+  width: "50vw",
+  marginTop: "20vh",
+  marginLeft: "30vw",
+
   "@media (max-width: 900px)": {
-    justifyContent: "flex-start",
+    width: "80vw",
+    marginLeft: 0,
   },
 });
 
 export const Name = styled.div({
   fontSize: "4vw",
   fontWeight: 800,
-  position: "absolute",
   textAlign: "center",
   opacity: 0.6,
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  "@media (max-width: 900px)": {
-    fontSize: "8vw",
-  },
 });
 
 export const Description = styled.div({
   fontSize: "2vw",
   fontWeight: 400,
-  position: "absolute",
   opacity: 0.6,
-  top: "63%",
-  left: "50%",
   textAlign: "center",
-  width: "100%",
-  transform: "translate(-50%, -50%)",
-  "@media (max-width: 1200px)": {
-    top: "60%",
-  },
-  "@media (max-width: 900px)": {
-    fontSize: "2vw",
-    top: "61%",
-  },
-  "@media (max-width: 700px)": {
-    fontSize: "3vw",
-    top: "59%",
-  },
 });
 
 export const SectionContainer = styled.div({
   backgroundColor: "rgb(255,255,255,0.2)",
-  padding: "2% 5%",
+  padding: "2% 5% 3% 5%",
   margin: "2% 2%",
-  borderRadius: 10,
+  borderRadius: 0,
   flex: 1,
   "@media (max-width: 900px)": {
     padding: "2% 5% 5% 5%",
@@ -71,31 +60,23 @@ export const SectionContainer = styled.div({
 });
 
 export const Section = styled.div({
-  fontSize: "2vw",
+  fontSize: "1.5vw",
   fontWeight: 700,
   textAlign: "center",
-  margin: "4% 0 2% 0",
-
-  "@media (max-width: 900px)": {
-    fontSize: "4vw",
-    textAlign: "left",
-  },
-  "@media (max-width: 700px)": {
-    fontSize: "5vw",
-  },
+  margin: "1% 1%",
 });
 
 export const SectionText = styled.div({
   fontSize: "1.5vw",
   fontWeight: 400,
-  textAlign: "center",
+  textAlign: "left",
   margin: "5% 0 0 0",
   "@media (max-width: 900px)": {
-    fontSize: "3vw",
+    fontSize: "2vw",
     textAlign: "left",
   },
   "@media (max-width: 700px)": {
-    fontSize: "4vw",
+    fontSize: "3vw",
   },
 });
 
